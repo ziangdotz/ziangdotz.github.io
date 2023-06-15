@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Zhang Ziang (张子昂)</title>
+
+	<link type="text/css" rel="stylesheet" href="../static/css/basic.css" charset="utf-8">
+	<link type="text/css" rel="stylesheet" href="../static/css/home.css" charset="utf-8">
+
+	<script type="text/javascript" language="javascript" src="../static/js/jquery-3.7.0.min.js"
+		charset="utf-8"></script>
+	<script type="text/javascript" language="javascript" src="../static/js/marked.min.js" charset="utf-8"></script>
+	<script src="https://map.qq.com/api/gljs?v=1.exp&key=CBBBZ-7FPWU-UZUVL-4FWLL-T4DLE-XDBYZ"></script>
+</head>
+
+<body>
+
+	<div class="page_div">
+		<!-- header part -->
+		<div id="header_div"></div>
+
+		<script type="text/javascript" language="javascript">
+			$("#header_div").load("./header.html");
+		</script>
+
+		<div class="content_div">
+			<!-- info -->
+			<div id="info_div" class="info_div"> </div>
+
+			<script type="text/javascript" language="javascript">
+				/* 读取 markdown 形式的 info 数据，并显示 */
+				$.get("../data/home/info.md", (response, status, xhr) => {
+					$("#info_div").html(marked.marked(response));
+				});
+			</script>
+
+			<hr />
+
+			<!-- project list part -->
+			<div class="part_div">
+				<div class="part_header_div">
+					<p class="part_title_p"><span><strong>Projects</strong></span></p>
+				</div>
+				<div class="part_content_div">
+					<div id="projectlistitems_div" class="part_items_div"></div>
+				</div>
+			</div>
+
+			<script type="text/javascript" language="javascript">
+				$.getJSON("../data/home/projectlist.json", "", (data) => {
+					var projectList = data.projectList;
+					var projectListItems = projectList.items;
+					var projectListItemsStr = "<ul>";
+					$.each(projectListItems, (i, item) => {
+						projectListItemsStr += "<li><p class='part_items_p'><span><u>" + item.name + "</u></span>&ensp;";
+						if (item.repositoryURL !== "")
+							projectListItemsStr += "<a class='part_items_a' href='" + item.repositoryURL + "'>[repository]</a>";
+						if (item.releaseURL !== "")
+							projectListItemsStr += "<a class='part_items_a' href='" + item.releaseURL + "'>[release]</a>";
+						if (item.demoShowURL !== "")
+							projectListItemsStr += "<a class='part_items_a' href='" + item.demoShowURL + "'>[demoShowURL]</a>";
+						projectListItemsStr += "</p><p class='part_items_p'><span class='color808080'>" + item.introduction + "</span></p></li>";
+					});
+					projectListItemsStr += "</ul>";
+					document.getElementById("projectlistitems_div").innerHTML = projectListItemsStr;
+				});
+			</script>
+
+			<!-- <hr /> -->
+
+			<!-- paper list part -->
+			<div class="part_div">
+				<div class="part_header_div">
+					<p class="part_title_p"><span><strong>Publications</strong></span></p>
+				</div>
+				<div class="part_content_div">
+					<div id="paperlistitems_div" class="part_items_div"></div>
+				</div>
+			</div>
+
+			<script type="text/javascript" language="javascript">
+				$.getJSON("../data/home/paperlist.json", "", (data) => {
+					var paperList = data.paperList;
+					var paperListItems = paperList.items;
+					var paperListItemsStr = "<ul>";
+					$.each(paperListItems, (i, item) => {
+						paperListItemsStr += "<li><p class='part_items_p'><span>" + item.authors + "</span>&ensp;<span><strong>" + item.name + "</strong></span>&ensp;<span class='color808080'>" + item.source + "</span>&ensp;"
+						if (item.pdfURL !== "")
+							paperListItemsStr += "<a class='part_items_a' href='" + item.pdfURL + "'>[pdf]</a>"
+						if (item.videoURL !== "")
+							paperListItemsStr += "<a class='part_items_a' href='" + item.videoURL + "'>[video]</a>"
+						if (item.codeURL !== "")
+							paperListItemsStr += "<a class='part_items_a' href='" + item.codeURL + "'>[code]</a>"
+						paperListItemsStr += "</p></li>";
+					});
+					paperListItemsStr += "</ul>";
+					document.getElementById("paperlistitems_div").innerHTML = paperListItemsStr;
+				});
+			</script>
+		</div>
+
+		<!-- footer part -->
+		<div id="footer_div"></div>
+
+		<script type="text/javascript" language="javascript">
+			$("#footer_div").load("./footer.html");
+		</script>
+	</div>
+
+	<script type="text/javascript" language="javascript">
+		console.log(navigator.userAgent);
+	</script>
+
+</body>
+
+</html>

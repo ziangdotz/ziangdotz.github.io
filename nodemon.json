@@ -1,0 +1,15 @@
+{
+	"restartable": "rs",
+	"verbose": true,
+	"watch": [
+		"data/",
+		"static/",
+		"templates/",
+		"main.js",
+		"index.html"
+	],
+	"ignore": [],
+	"delay": "1000",
+	"exec": "node ./main.js",
+	"ext": "js ejs json"
+}

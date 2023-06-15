@@ -1,0 +1,62 @@
+/* @import "./basic.css"; */
+
+.content_div {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+}
+
+.info_div {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+}
+
+.part_div {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+}
+
+.part_header_div {
+	width: 100%;
+	margin: 0px;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.part_title_p {
+	font-size: 23px;
+}
+
+.part_content_div {
+	width: 100%;
+	margin: 0px;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+}
+
+.part_items_div {
+	width: 100%;
+	margin: 13px 0px 0px 0px;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+}
+
+.part_items_p {
+	margin: 4px 0px;
+	word-wrap: break-word;
+	word-break: break-all;
+}
+
+.part_items_a {
+	margin: 0px 5px;
+}

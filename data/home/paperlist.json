@@ -1,0 +1,15 @@
+{
+	"paperList": {
+		"totalNum": 1,
+		"items": [
+			{
+				"name": "Research on Key Technologies for High-Performance Hardware Implementation of ZUC.",
+				"source": "Information Security and Communications Privacy, 2022(8)",
+				"authors": "ZHANG Ziang, CHEN Zhaohui.",
+				"pdfURL": "https://github.com/ziangdotz/ziangdotz.github.io/tree/main/data/home/papers/ZUC算法高性能硬件实现关键技术研究_张子昂.pdf",
+				"videoURL": "",
+				"codeURL": ""
+			}
+		]
+	}
+}

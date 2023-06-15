@@ -1,0 +1,51 @@
+<link type="text/css" rel="stylesheet" href="../static/css/footer.css" charset="utf-8">
+
+<hr />
+
+<div class="footer_div">
+	<div class="footer_left_div">
+		<p id="footer_curr_time_p" class="footer_p"></p>
+	</div>
+	<div class="footer_right_div">
+		<p id="footer_copyright_notice_p" class="footer_p"></p>
+	</div>
+</div>
+
+<script type="text/javascript" language="javascript">
+	/* 格式化 footer_curr_time_p 显示当前时间 */
+	const currFullTimeFormate = () => {
+		var currDateObject = new Date();
+		var yearValue = currDateObject.getFullYear();
+		var monthValue = ('0' + (currDateObject.getMonth() + 1)).slice(-2);
+		var dayValue = ('0' + (currDateObject.getDate())).slice(-2);
+		var hourValue = ('0' + (currDateObject.getHours())).slice(-2);
+		var minutesValue = ('0' + (currDateObject.getMinutes())).slice(-2);
+		var secondsValue = ('0' + (currDateObject.getSeconds())).slice(-2);
+
+		document.getElementById("footer_curr_time_p").innerHTML = yearValue + "-" + monthValue + "-" + dayValue + " " + hourValue + ":" + minutesValue + ":" + secondsValue;
+	} // 获取时间信息，并格式化显示的函数
+
+	// 初始化时执行一次
+	currFullTimeFormate();
+
+	// 之后，一秒更新一次
+	setInterval(function () {
+		currFullTimeFormate();
+	}, 1000);
+
+	/* 格式化 footer_copyright_notice_p 显示版权信息 */
+	const currYearFormate = () => {
+		var currDateObject = new Date();
+		var yearValue = currDateObject.getFullYear();
+		var monthValue = ('0' + (currDateObject.getMonth() + 1)).slice(-2);
+		var dayValue = ('0' + (currDateObject.getDate())).slice(-2);
+		var hourValue = ('0' + (currDateObject.getHours())).slice(-2);
+		var minutesValue = ('0' + (currDateObject.getMinutes())).slice(-2);
+		var secondsValue = ('0' + (currDateObject.getSeconds())).slice(-2);
+
+		document.getElementById("footer_copyright_notice_p").innerHTML = "&copy;" + yearValue + " ziangdotz";
+	} // 获取年份信息，并格式化显示的函数
+
+	// 初始化时执行一次
+	currYearFormate();
+</script>

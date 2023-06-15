@@ -1,0 +1,70 @@
+@font-face {
+	font-family: Inconsolata;
+	src: url("../font/Inconsolata-Regular.ttf");
+}
+
+@font-face {
+	font-family: Noto Sans SC;
+	src: url("../font/NotoSansSC-Regular.otf");
+}
+
+body {
+	margin: 0px auto;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: flex-start;
+	font-family: "Inconsolata", "Noto Sans SC";
+	background-color: white;
+}
+
+.page_div {
+	width: 1000px;
+	padding: 5px 10px;
+}
+
+hr {
+	width: 100%;
+	height: 0;
+	border: 0;
+	border-top: 1px solid rgba(0, 0, 0, 0.2);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+p {
+	margin: 0px 2px;
+	font-size: 18px;
+	color: black;
+	line-height: 1.2;
+}
+
+a {
+	margin: 0px;
+	font-size: 18px;
+	color: blue;
+	text-decoration: none;
+}
+
+a:hover {
+	color: red;
+	text-decoration: underline;
+}
+
+ul {
+	margin: 0px;
+	margin-block-start: 0em;
+	margin-block-end: 0em;
+}
+
+li {
+	margin: 0px 0px 13px 0px;
+}
+
+.color808080 {
+	color: #808080;
+}
+
+h2 {
+	margin: 0px 0px 15px 0px;
+	font-size: 26px;
+}
