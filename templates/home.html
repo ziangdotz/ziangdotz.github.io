@@ -55,7 +55,7 @@
 					var projectListItems = projectList.items;
 					var projectListItemsStr = "<ul>";
 					$.each(projectListItems, (i, item) => {
-						projectListItemsStr += "<li><p class='part_items_p'><span><u>" + item.name + "</u></span>&ensp;";
+						projectListItemsStr += "<li><p class='part_items_p'><span><strong>" + item.name + "</strong></span>&ensp;";
 						if (item.repositoryURL !== "")
 							projectListItemsStr += "<a class='part_items_a' href='" + item.repositoryURL + "'>[repository]</a>";
 						if (item.releaseURL !== "")

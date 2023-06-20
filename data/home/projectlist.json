@@ -3,13 +3,6 @@
 		"totalNum": 2,
 		"items": [
 			{
-				"name": "MiracleHttpdLinux",
-				"introduction": "A small C-based HTTP server implemented under Linux by learning tinyhttp open source code.",
-				"repositoryURL": "https://github.com/ziangdotz/dev_miralce_httpd_linux_c",
-				"releaseURL": "",
-				"demoShowURL": ""
-			},
-			{
 				"name": "MiracleMusic",
 				"introduction": "A music player of Android based on Java-1.8, the software integrates opening animation, supports positioning of the song in play, and has the function of automatic switching of songs.",
 				"repositoryURL": "https://github.com/ziangdotz/dev_miracle_music_android",
